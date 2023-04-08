@@ -21,10 +21,10 @@ function changeColor() {
     })
 
     randomColor.addEventListener('click', () => {
-        let randomRgbValue = Math.floor(Math.random()*256);
+        let randomRgbValue1 = Math.floor(Math.random()*256);
         let randomRgbValue2 = Math.floor(Math.random()*256);
         let randomRgbValue3 = Math.floor(Math.random()*256);
-        color = `rgb(${randomRgbValue},${randomRgbValue2},${randomRgbValue3})`;
+        color = `rgb(${randomRgbValue1},${randomRgbValue2},${randomRgbValue3})`;
         createGrid;
     })
 
