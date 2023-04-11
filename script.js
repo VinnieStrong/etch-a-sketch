@@ -6,8 +6,6 @@ let eraser = document.querySelector('.eraser');
 let randomColor = document.querySelector('.random-color');
 let color = 'rgb(0,0,0)';
 
-
-
 function changeColor() {
 
     redColor.addEventListener('click', () => {
@@ -20,13 +18,13 @@ function changeColor() {
         createGrid;
     })
 
-    randomColor.addEventListener('click', () => {
-        let randomRgbValue1 = Math.floor(Math.random()*256);
-        let randomRgbValue2 = Math.floor(Math.random()*256);
-        let randomRgbValue3 = Math.floor(Math.random()*256);
-        color = `rgb(${randomRgbValue1},${randomRgbValue2},${randomRgbValue3})`;
-        createGrid;
-    })
+    //randomColor.addEventListener('click', () => {
+    //    let randomRgbValue1 = Math.floor(Math.random()*256);
+    //    let randomRgbValue2 = Math.floor(Math.random()*256);
+    //    let randomRgbValue3 = Math.floor(Math.random()*256);
+    //    color = `rgb(${randomRgbValue1},${randomRgbValue2},${randomRgbValue3})`;
+    //    createGrid();
+    //})
 
 }
 
@@ -65,7 +63,20 @@ function createGrid() {
         square.addEventListener('mousemove', () => { 
         square.style.backgroundColor = color;
         })
-    }    
+    }
+
+    randomColor.addEventListener('click', () => {
+        let squares = document.querySelectorAll('.grid');
+        squares.forEach((square) => {
+            square.addEventListener('mousemove', () => {
+                let randomRgbValue1 = Math.floor(Math.random()*256);
+                let randomRgbValue2 = Math.floor(Math.random()*256);
+                let randomRgbValue3 = Math.floor(Math.random()*256);
+                let randomColor = `rgb(${randomRgbValue1},${randomRgbValue2},${randomRgbValue3})`;
+                square.style.backgroundColor = randomColor;
+            })    
+        })
+    })
 }
 
 createGrid();
